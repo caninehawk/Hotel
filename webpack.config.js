@@ -2,14 +2,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-    entry: "./src/index.js", // Corrected entry path
+    entry: "./src/index.js",
     output: {
         filename: "main.[contentHash].js",
         path: path.resolve(__dirname, "dist")
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html" // Corrected template path
+            template: "./src/index.html"
         })
     ],
     module: {
@@ -18,10 +18,6 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
-        ],
-    },
-    module: {
-        rules: [
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
@@ -34,6 +30,6 @@ module.exports = {
                     }
                 ]
             }
-        ]
-    }
+        ],
+    },
 };
